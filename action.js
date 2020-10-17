@@ -8,16 +8,17 @@ const { google } = require('googleapis');
 var service = google.youtube('v3');
 
 const addItems = (auth) => {
-  service.playlists.insert({
+  service.playlistItems.insert({
     auth: auth,
-    part: 'snippet,status',
+    part: 'id,snippet',
     resource: {
       snippet: {
-      title: 'Test Playlist',
-      description: 'A private playlist created with the YouTube API'
-      },
-      status: {
-          privacyStatus: 'private'
+        playlistId: 'PLFAuwC0o5nudCYkiM91HmHuAbD8R6M9qi',
+        position: 0,
+        resourceId:{
+          kind: 'youtube#video',
+          videoId: 'ub82Xb1C8os'
+        }
       }
     }
   }, function (err, response) {
@@ -28,16 +29,6 @@ const addItems = (auth) => {
     else{
       console.log('API executed succesfully');
     }
-    // var channels = response.data.items;
-    // if (channels.length == 0) {
-    //   console.log('No channel found.');
-    // } else {
-    //   console.log('This channel\'s ID is %s. Its title is \'%s\', and ' +
-    //     'it has %s views.',
-    //     channels[0].id,
-    //     channels[0].snippet.title,
-    //     channels[0].statistics.viewCount);
-    // }
   });
 }
 

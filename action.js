@@ -5,31 +5,33 @@
  */
 
 const { google } = require('googleapis');
-var service = google.youtube('v3');
+const service = google.youtube('v3');
+const { scrape } = require('./scrape')
 
-const addItems = (auth) => {
-  service.playlistItems.insert({
+const addItems = async (auth) => {
+  video_id = await scrape();
+  request = service.playlistItems.insert({
     auth: auth,
     part: 'id,snippet',
     resource: {
       snippet: {
         playlistId: 'PLFAuwC0o5nudCYkiM91HmHuAbD8R6M9qi',
         position: 0,
-        resourceId:{
+        resourceId: {
           kind: 'youtube#video',
-          videoId: 'ub82Xb1C8os'
+          videoId: `${video_id[0]}`
         }
       }
     }
   }, function (err, response) {
     if (err) {
-      console.log('The API returned an error: ' + err);
+      console.log('The API returned an error: ' + err.message);
       return;
     }
-    else{
+    else {
       console.log('API executed succesfully');
     }
-  });
+  }); 
 }
 
 module.exports = { addItems };

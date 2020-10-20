@@ -1,7 +1,8 @@
-var { authorize } = require('./auth');
-var { addItems } = require('./action');
 var fs = require('fs');
 var app = require('express')();
+
+var { authorize } = require('./auth');
+var { addItems } = require('./action');
 
 // Load client secrets from a local file.
 fs.readFile('client_secret.json', (err, content) => {

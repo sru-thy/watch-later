@@ -1,0 +1,16 @@
+{
+  "name": "yt-playlist-for-whatsapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "node script.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "googleapis": "^61.0.0",
+    "node-cron": "^2.0.3",
+    "puppeteer": "^5.3.1"
+  }
+}

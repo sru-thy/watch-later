@@ -2,3 +2,4 @@ client_secret.json
 package-lock.json
 .credentials
 node_modules
+user_data

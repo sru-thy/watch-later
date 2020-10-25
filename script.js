@@ -12,8 +12,8 @@ var SCOPES = ['https://www.googleapis.com/auth/youtube.force-ssl'];
 var TOKEN_DIR = __dirname + '/.credentials/';
 var TOKEN_PATH = TOKEN_DIR + 'ytapi.json';
 
-
 task = () => {
+    
     // Load client secrets from a local file.
     fs.readFile('client_secret.json', (err, content) => {
         if (err) {
@@ -26,11 +26,10 @@ task = () => {
 
 }
 
-task();
-// cron.schedule("* * * * *", () => {
-//   task(); //runs every midnight
-//   console.log('again');
-// })
+cron.schedule("00 00 * * *", () => {
+  task(); //runs every midnight
+  console.log('again');
+})
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
@@ -113,9 +112,9 @@ function storeToken(token) {
 let scrape = async () => {
     try {
         const browser = await puppeteer.launch({
-            headless: false,
+            headless: true,
             userDataDir: "./user_data",
-            // slowMo: 250
+            slowMo: 250
         });
 
         const page = await browser.newPage();
@@ -137,7 +136,7 @@ let scrape = async () => {
 
         const array = await page.evaluate(() => {
 
-            // Poor choice of names ?!, ik :)
+            // Poor choice of variable names ?!, ik :)
             let x = document.querySelectorAll('._2o2ZR')
             var y = [...x]
             var z = y.map(p => p.href)
@@ -170,7 +169,7 @@ let scrape = async () => {
 
 const addItems = async (auth) => {
     video_id = await scrape();
-    if (video_id) {   // For the sake of UnhandledPromiseRejection warning :O
+    if (video_id) {      
         index = video_id.length - 1;
         addall(index);
     }
@@ -198,7 +197,7 @@ const addItems = async (auth) => {
                 setTimeout(function () {
                     index--;
                     if (index >= (video_id.length-5))
-                        addall(index); //Good ol' recursion
+                        addall(index);  //Good ol' recursion :)
                 }, 3000);
             }
         });

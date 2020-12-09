@@ -146,7 +146,6 @@ let scrape = async () => {
             var d = c.map(p => p.title)
             var res = z.concat(d);
             var result = res.map(url => url.replace("http://", "").replace("https://", "").replace("www.", "").replace("youtu.be/", "youtube.com/watch?v=").slice(20))
-            debugger;
             return result;
 
         });

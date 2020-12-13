@@ -30,9 +30,9 @@ npm start
  
 :thinking: Why you might need this !
 ---
-- You're too lazy to do a task that takes less than a second to do :slightly_smiling_face:
-- If you're friends with someone like [@fillerInk](https://github.com/fillerInk) who likes to spam the chat with YouTube videos :facepalm:
-- Because using WhatsApp sucks :lizard:
+- You're too lazy to do a task that takes less than a second to do 
+- If you're friends with someone like [@fillerInk](https://github.com/fillerInk) who likes to spam the chat with YouTube videos
+- Because WhatsApp sucks :lizard:
 - Remember when YouTube chat existed.. yes i miss it too :coffin:
 
 :arrow_forward: Play Around

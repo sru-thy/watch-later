@@ -1,12 +1,13 @@
 {
-  "name": "yt-playlist-for-whatsapp",
+  "name": "watch-later",
   "version": "1.0.0",
-  "description": "",
+  "description": "A WhatsApp Bot that scrapes the YouTube links sent by a contact and adds them to your watch later playlist. ",
   "main": "script.js",
+  "homepage": "https://github.com/sru-thy/watch-later#readme",
   "scripts": {
     "start": "node script.js"
   },
-  "author": "",
+  "author": "Sruthy M L",
   "license": "ISC",
   "dependencies": {
     "googleapis": "^61.0.0",

@@ -40,4 +40,5 @@ npm start
  - The browser is launched headless by default. See the browser in action by changing `headless: false` at [L115](https://github.com/sru-thy/watch-later/blob/master/script.js#L115)
  - [Puppeteer](https://github.com/puppeteer/puppeteer#puppeteer) downloads chromium by default. Using [puppeteer-core](https://github.com/puppeteer/puppeteer#puppeteer-core)  you can connect to an existing browser installation 
 
-PS - WhatsApp does not allow bots . Use their [official API](https://www.whatsapp.com/business/api) instead !
+Does WhatsApp allow bots? Nope.
+Use their [official API](https://www.whatsapp.com/business/api) instead for long-term use cases!
